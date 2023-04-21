@@ -4,7 +4,10 @@ public class NumberToCharacter {
 	
 	
 	public char getCharacterSequence(int number) {
-		return 'b';
+		if(number%2==0)
+			return 'A';
+		else
+			return 'b';
 	}
 
 }
