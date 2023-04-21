@@ -30,8 +30,10 @@ public class NumberToCharacterTest {
 	
 	@Test
 	public void testGetSequenceCharacterFromOneToOddNumber() {
-		String sequenceCharacter= convert.getCharacterSequence(3);
-		assertEquals("bAb", sequenceCharacter);
+		String sequenceCharacter= convert.getCharacterSequence(5);
+		assertEquals("bAbAb", sequenceCharacter);
 	}
+	
+	
 
 }
