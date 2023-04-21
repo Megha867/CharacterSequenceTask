@@ -36,9 +36,9 @@ public class NumberToCharacterTest {
 	
 	@Test
 	public void testSequenceCharacterForList() {
-		int list_of_number[] = new int[] {1,2};
-		String sequenceCharacter = convert.getCharacterSequenceList(list_of_number);
-		assertEquals("b-bA"	, sequenceCharacter);
+		int list_of_numbers[] = new int[] {1,2};
+		String sequenceCharacter = convert.getCharacterSequenceList(list_of_numbers);
+		assertEquals("b-bA", sequenceCharacter);
 	}
 	
 	

@@ -2,7 +2,6 @@ package com.numbertochar;
 
 public class NumberToCharacter {
 	
-	
 	public char getCharacter(int number) {
 			if(number%2==0)
 				return 'A';
@@ -22,7 +21,18 @@ public class NumberToCharacter {
 	}
 
 	public String getCharacterSequenceList(int[] list_of_number) {
-		return null;
+		String outputString="";
+		for(int array_index=0;array_index<list_of_number.length;array_index++) {
+			for(int count=1;count<=list_of_number[array_index];count++) {
+				if(count%2==0)
+				{
+					outputString+="A";
+				}
+				else
+					outputString+="b";
+			}
+		}
+		return outputString;
 	}
 
 }
