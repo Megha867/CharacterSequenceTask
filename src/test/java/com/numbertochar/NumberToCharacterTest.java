@@ -2,13 +2,18 @@ package com.numbertochar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.numbertochar.NumberToCharacter;
 
 public class NumberToCharacterTest {
 	
-	NumberToCharacter convert = new NumberToCharacter();
+	NumberToCharacter convert ;
+	
+	@BeforeEach
+	public void setUp() {
+		convert= new NumberToCharacter();
+	}
 	
 	@Test
 	public void testOddNumber() {
@@ -36,9 +41,9 @@ public class NumberToCharacterTest {
 	
 	@Test
 	public void testSequenceCharacterForList() {
-		int list_of_numbers[] = new int[] {1,2};
+		int list_of_numbers[] = new int[] {1,2,3,4};
 		String sequenceCharacter = convert.getCharacterSequenceList(list_of_numbers);
-		assertEquals("b-bA", sequenceCharacter);
+		assertEquals("b-bA-bAb-bAbA", sequenceCharacter);
 	}
 	
 	

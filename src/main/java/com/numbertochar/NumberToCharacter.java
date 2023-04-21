@@ -25,12 +25,12 @@ public class NumberToCharacter {
 		for(int array_index=0;array_index<list_of_number.length;array_index++) {
 			for(int count=1;count<=list_of_number[array_index];count++) {
 				if(count%2==0)
-				{
 					outputString+="A";
-				}
 				else
 					outputString+="b";
 			}
+			if(!(array_index==list_of_number.length-1))
+				outputString+="-";
 		}
 		return outputString;
 	}
