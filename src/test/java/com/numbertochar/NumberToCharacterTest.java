@@ -24,7 +24,8 @@ public class NumberToCharacterTest {
 	
 	@Test
 	public void testGetSequenceCharacterFromOne() {
-		String letter= convert.getCharacterSequence(2);
+		String sequenceCharacter= convert.getCharacterSequence(2);
+		assertEquals("bA", sequenceCharacter);
 	}
 
 }

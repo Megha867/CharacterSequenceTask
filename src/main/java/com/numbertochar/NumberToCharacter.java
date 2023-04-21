@@ -11,7 +11,14 @@ public class NumberToCharacter {
 	}
 	
 	public String getCharacterSequence(int number) {
-		return null;
+		String outputString="";
+		for(int count=1;count<=number;count++) {
+			if(count%2==0)
+				outputString+="A";
+			else
+				outputString+="b";
+		}
+		return outputString;
 	}
 
 }
