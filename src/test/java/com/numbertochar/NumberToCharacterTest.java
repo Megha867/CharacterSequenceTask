@@ -23,15 +23,22 @@ public class NumberToCharacterTest {
 	}
 	
 	@Test
-	public void testGetSequenceCharacterFromOne() {
+	public void testSequenceCharacterFromOne() {
 		String sequenceCharacter= convert.getCharacterSequence(2);
 		assertEquals("bA", sequenceCharacter);
 	}
 	
 	@Test
-	public void testGetSequenceCharacterFromOneToOddNumber() {
+	public void testSequenceCharacterFromOneToOddNumber() {
 		String sequenceCharacter= convert.getCharacterSequence(5);
 		assertEquals("bAbAb", sequenceCharacter);
+	}
+	
+	@Test
+	public void testSequenceCharacterForList() {
+		int list_of_number[] = new int[] {1,2};
+		String sequenceCharacter = convert.getCharacterSequenceList(list_of_number);
+		assertEquals("b-bA"	, sequenceCharacter);
 	}
 	
 	

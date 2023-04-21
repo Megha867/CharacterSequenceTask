@@ -21,4 +21,8 @@ public class NumberToCharacter {
 		return outputString;
 	}
 
+	public String getCharacterSequenceList(int[] list_of_number) {
+		return null;
+	}
+
 }
