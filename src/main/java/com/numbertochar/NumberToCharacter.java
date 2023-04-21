@@ -3,7 +3,7 @@ package com.numbertochar;
 public class NumberToCharacter {
 	
 	
-	public char getCharacterSequence() {
+	public char getCharacterSequence(int number) {
 		return 'b';
 	}
 

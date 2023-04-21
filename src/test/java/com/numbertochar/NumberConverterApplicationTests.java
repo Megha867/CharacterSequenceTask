@@ -1,4 +1,4 @@
-package com.trs.system;
+package com.numbertochar;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

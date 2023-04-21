@@ -1,4 +1,4 @@
-package com.trs.system;
+package com.numbertochar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -12,8 +12,13 @@ public class NumberToCharacterTest {
 	
 	@Test
 	public void testOdddNumber() {
-		char letter = convert.getCharacterSequence();
+		char letter = convert.getCharacterSequence(1);
 		assertEquals('b', letter);
+	}
+	
+	@Test
+	public void testEvenNumber() {
+	
 	}
 
 }
