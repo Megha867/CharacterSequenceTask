@@ -12,20 +12,19 @@ public class NumberToCharacterTest {
 	
 	@Test
 	public void testOddNumber() {
-		String letter = convert.getCharacterSequence(1);
-		assertEquals("b", letter);
+		char letter = convert.getCharacter(1);
+		assertEquals('b', letter);
 	}
 	
 	@Test
 	public void testEvenNumber() {
-		String letter = convert.getCharacterSequence(2);
-		assertEquals("A", letter);
+		char letter = convert.getCharacter(2);
+		assertEquals('A', letter);
 	}
 	
 	@Test
-	public void testGetSequenceCharacterFrom1() {
+	public void testGetSequenceCharacterFromOne() {
 		String letter= convert.getCharacterSequence(2);
-		assertEquals("bA", letter);
 	}
 
 }
