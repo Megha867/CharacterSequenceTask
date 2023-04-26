@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.trs</groupId>
-	<artifactId>reservation_system</artifactId>
+	<artifactId>NumberConverter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>NumberConverter</name>
-	<description>This is ticket reservation system</description>
+	<description>This will convert number to charachter sequence</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
