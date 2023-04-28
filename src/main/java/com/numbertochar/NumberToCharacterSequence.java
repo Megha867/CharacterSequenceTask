@@ -1,48 +1,36 @@
 package com.numbertochar;
 
+import java.util.Scanner;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class NumberToCharacterSequence {
 	
 	public char getCharacterForNumber(int number) {
-			if(number%2==0)
-				return 'A';
-			else
-				return 'b';
+		return (number%2==0)?'A':'b';
 	}
 	
 	public String getCharacterSequenceForNumber(int number) {
-		String outputString="";
+		String characterSequence="";
 		if(number>0) {
-			for(int count=1;count<=number;count++) {
-				if(count%2==0)
-					outputString+="A";
-				else
-					outputString+="b";
+			for(int counter=1;counter<=number;counter++) {
+				characterSequence+=getCharacterForNumber(counter);
 			}
 		}
-		if(number<=0) {
-			outputString+="0";
-		}
-		return outputString;
+		if(number<=0) 
+			characterSequence+="0";
+		return characterSequence;
 	}
 
 	public String getCharacterSequenceForList(int[] list_of_number) {
-		String outputString="";
+		String characterSequence="";
 		for(int array_index=0;array_index<list_of_number.length;array_index++) {
-				if(list_of_number[array_index]>0) {
-					for(int count=1;count<=list_of_number[array_index];count++) {
-						if(count%2==0)
-							outputString+="A";
-						else
-							outputString+="b";
-					}
-				}
-				if(list_of_number[array_index]<=0) {
-					outputString+="0";
-				}
+			characterSequence+=getCharacterSequenceForNumber(list_of_number[array_index]);
 				if(!(array_index==list_of_number.length-1))
-					outputString+="-";
+					characterSequence+="-";
 		}
-		return outputString;
+		return characterSequence;
 	}
 
 }

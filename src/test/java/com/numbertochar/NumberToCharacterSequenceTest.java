@@ -1,9 +1,12 @@
 package com.numbertochar;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 public class NumberToCharacterSequenceTest {
@@ -15,49 +18,41 @@ public class NumberToCharacterSequenceTest {
 		convert= new NumberToCharacterSequence();
 	}
 	
-	@Test
-	public void testOddNumber() {
-		char letter = convert.getCharacterForNumber(1);
-		assertEquals('b', letter);
+	@ParameterizedTest
+	@ValueSource(ints = {1,3,5,7})
+	public void shouldReturn_b_whenNumberIsOdd(int number) {
+		assertEquals('b', convert.getCharacterForNumber(number));
+	}
+	
+	@ParameterizedTest
+	@ValueSource(ints = {2,4,6,8})
+	public void shouldReturn_A_whenNumberIsEven(int number) {
+		assertEquals('A', convert.getCharacterForNumber(number));
 	}
 	
 	@Test
-	public void testEvenNumber() {
-		char letter = convert.getCharacterForNumber(2);
-		assertEquals('A', letter);
+	public void shouldReturnSequenceCharacter_ForGivenEvenNumber() {
+		assertEquals("bA", convert.getCharacterSequenceForNumber(2));
 	}
 	
 	@Test
-	public void testSequenceCharacterFromOne() {
-		String sequenceCharacter= convert.getCharacterSequenceForNumber(2);
-		assertEquals("bA", sequenceCharacter);
+	public void shouldReturnSequenceCharacter_ForGivenOddNumber() {
+		assertEquals("bAbAb", convert.getCharacterSequenceForNumber(5));
 	}
 	
 	@Test
-	public void testSequenceCharacterFromOneToOddNumber() {
-		String sequenceCharacter= convert.getCharacterSequenceForNumber(5);
-		assertEquals("bAbAb", sequenceCharacter);
+	public void shouldReturnSequenceCharacter_ForGivenListOfNumbers() {
+		assertEquals("b-bA-bAb-bAbA", convert.getCharacterSequenceForList(new int[] {1,2,3,4}));
 	}
 	
 	@Test
-	public void testSequenceCharacterForList() {
-		int list_of_numbers[] = new int[] {1,2,3,4};
-		String sequenceCharacter = convert.getCharacterSequenceForList(list_of_numbers);
-		assertEquals("b-bA-bAb-bAbA", sequenceCharacter);
+	public void shouldReturnZero_WhenNumberIsZero() {
+		assertEquals("0", convert.getCharacterSequenceForNumber(0));
 	}
 	
 	@Test
-	public void testWhenNumberIsZero() {
-		String sequenceCharacter= convert.getCharacterSequenceForNumber(0);
-		assertEquals("0", sequenceCharacter);
-	}
-	
-	
-	@Test
-	public void testSequenceCharacterForListWhenNumberIsZero() {
-		int list_of_numbers[] = new int[] {1,2,0,4};
-		String sequenceCharacter = convert.getCharacterSequenceForList(list_of_numbers);
-		assertEquals("b-bA-0-bAbA", sequenceCharacter);
+	public void shouldReturnSequenceOfCharacterAndZeroWhenListContainsZero() {
+		assertEquals("b-bA-0-bAbA", convert.getCharacterSequenceForList(new int[] {1,2,0,4}));
 	}
 	
 
